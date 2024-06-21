@@ -30,11 +30,12 @@
 		"./tsc/no-dom/library": "./tsc/no-dom/library.json"
 	},
 	"scripts": {
-		"release": "np --no-cleanup",
+		"release": "np --no-cleanup --test-script verify",
 		"check-schema": "node --import @swc-node/register/esm-register check-schema.ts",
 		"check-types": "tsc --noEmit",
 		"lint": "eslint --ext js,ts --max-warnings 0 .",
 		"check-format": "prettier --check .",
+		"verify": "pnpm run check-types && pnpm run lint && pnpm run check-format",
 		"prepare": "husky"
 	},
 	"prettier": "@lynxtaa/prettier-config",
