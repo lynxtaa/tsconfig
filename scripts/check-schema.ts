@@ -6,13 +6,7 @@ import Ajv, { type SchemaObject } from 'ajv'
 import chalk from 'chalk'
 import { globby } from 'globby'
 
-const response = await fetch('https://json.schemastore.org/tsconfig')
-
-if (!response.ok) {
-	throw new Error(`Bad response (${response.status})`)
-}
-
-const schema = (await response.json()) as SchemaObject
+const schema = JSON.parse(await readFile('./schema/schema.json', 'utf8')) as SchemaObject
 
 delete schema.$schema
 delete schema.id

@@ -1,38 +1,17 @@
-# @lynxtaa/eslint-config
+# @lynxtaa/tsconfig
 
-Shared ESLint configuration
+Shared TsConfig configuration
 
 ## Install
 
 ```sh
-npm install --save-dev @lynxtaa/eslint-config
+npm install --save-dev @lynxtaa/tsconfig
 ```
 
-## Extend your config
+## Extend your tsconfig.json
 
 ```json
 {
-  "extends": "@lynxtaa/eslint-config"
-}
-```
-
-## Extend your config (ES Modules)
-
-```json
-{
-  "extends": ["@lynxtaa/eslint-config", "@lynxtaa/eslint-config/esm"]
-}
-```
-
-## Add rules which requires type information
-
-```js
-module.exports = {
-  extends: ['@lynxtaa/eslint-config', '@lynxtaa/eslint-config/requires-typechecking'],
-  // See https://typescript-eslint.io/docs/linting/typed-linting
-  parserOptions: {
-    tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json'],
-  },
+  "extends": "@lynxtaa/tsconfig/bundler/no-dom/app"
 }
 ```

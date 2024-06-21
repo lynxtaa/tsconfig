@@ -1,7 +1,7 @@
 {
 	"name": "@lynxtaa/tsconfig",
 	"version": "0.9.0",
-	"description": "Shared tsconfig",
+	"description": "Shared TsConfig configuration",
 	"type": "module",
 	"keywords": [
 		"typescript",
@@ -31,7 +31,8 @@
 	},
 	"scripts": {
 		"release": "np --no-cleanup --test-script verify",
-		"check-schema": "node --import @swc-node/register/esm-register check-schema.ts",
+		"download-schema": "node --import @swc-node/register/esm-register scripts/download-schema.ts",
+		"check-schema": "node --import @swc-node/register/esm-register scripts/check-schema.ts",
 		"check-types": "tsc --noEmit",
 		"lint": "eslint --ext js,ts --max-warnings 0 .",
 		"check-format": "prettier --check .",
