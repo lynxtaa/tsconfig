@@ -1,0 +1,4 @@
+{
+	"extends": "./bundler/no-dom.json",
+	"include": ["**/*.ts"]
+}

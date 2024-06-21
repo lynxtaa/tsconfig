@@ -1,0 +1,63 @@
+{
+	"name": "@lynxtaa/tsconfig",
+	"version": "0.9.0",
+	"description": "Shared tsconfig",
+	"type": "module",
+	"keywords": [
+		"typescript",
+		"tsconfig"
+	],
+	"homepage": "https://github.com/lynxtaa/tsconfig#readme",
+	"repository": "https://github.com/lynxtaa/tsconfig.git",
+	"license": "MIT",
+	"author": "Alex Kondratiuk <lynxtaa@gmail.com>",
+	"files": [
+		"tsc",
+		"bundler"
+	],
+	"exports": {
+		"./bundler/dom/app": "./bundler/dom.json",
+		"./bundler/dom/library": "./bundler/dom.json",
+		"./bundler/dom/library-monorepo": "./bundler/dom.json",
+		"./bundler/no-dom/app": "./bundler/no-dom.json",
+		"./bundler/no-dom/library": "./bundler/no-dom.json",
+		"./bundler/no-dom/library-monorepo": "./bundler/no-dom.json",
+		"./tsc/dom/app": "./tsc/dom/app.json",
+		"./tsc/dom/library-monorepo": "./tsc/dom/library-monorepo.json",
+		"./tsc/dom/library": "./tsc/dom/library.json",
+		"./tsc/no-dom/app": "./tsc/no-dom/app.json",
+		"./tsc/no-dom/library-monorepo": "./tsc/no-dom/library-monorepo.json",
+		"./tsc/no-dom/library": "./tsc/no-dom/library.json"
+	},
+	"scripts": {
+		"release": "np --no-cleanup",
+		"check-schema": "node --import @swc-node/register/esm-register check-schema.ts",
+		"check-types": "tsc --noEmit",
+		"lint": "eslint --ext js,ts --max-warnings 0 .",
+		"check-format": "prettier --check .",
+		"prepare": "husky"
+	},
+	"prettier": "@lynxtaa/prettier-config",
+	"devDependencies": {
+		"@apideck/better-ajv-errors": "0.3.6",
+		"@lynxtaa/eslint-config": "0.9.0",
+		"@lynxtaa/prettier-config": "0.2.0",
+		"@swc-node/register": "1.9.2",
+		"@types/node": "20.14.7",
+		"ajv": "8.16.0",
+		"chalk": "5.3.0",
+		"eslint": "8.57.0",
+		"globby": "14.0.1",
+		"husky": "9.0.11",
+		"np": "10.0.6",
+		"prettier": "3.3.2",
+		"pretty-quick": "4.0.0"
+	},
+	"packageManager": "pnpm@9.4.0",
+	"engines": {
+		"node": ">=18.18.0"
+	},
+	"np": {
+		"yarn": false
+	}
+}
