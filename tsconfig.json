@@ -1,4 +1,4 @@
 {
-	"extends": "./bundler/no-dom.json",
+	"extends": "./bundler/tsconfig.no-dom.json",
 	"include": ["**/*.ts"]
 }
