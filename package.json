@@ -1,6 +1,6 @@
 {
 	"name": "@lynxtaa/tsconfig",
-	"version": "0.9.0",
+	"version": "0.1.0",
 	"description": "Shared TsConfig configuration",
 	"type": "module",
 	"keywords": [
